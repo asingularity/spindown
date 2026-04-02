@@ -1,0 +1,30 @@
+[project]
+name = "hdtool"
+version = "1.0.0"
+description = "Hard drive backup tool with TUI for UGREEN NAS"
+requires-python = ">=3.11"
+dependencies = [
+    "textual>=0.47.0",
+    "rich>=13.0",
+    "click>=8.1",
+]
+
+[project.scripts]
+hdtool = "hdtool.cli:main"
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-asyncio>=0.21",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"

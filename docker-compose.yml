@@ -1,0 +1,9 @@
+services:
+  hdtool:
+    build: .
+    image: hdtool:latest
+    stdin_open: true
+    tty: true
+    volumes:
+      - ${SOURCE_PATH:?Set SOURCE_PATH}:/source:ro
+      - ${DEST_PATH:?Set DEST_PATH}:/dest
